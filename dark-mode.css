@@ -1,3 +1,5 @@
+/* Custom overrides for blender-chat are at the bottom. */
+
 /******************************************
  *************General Settings*************
  ******************************************/
@@ -680,4 +682,60 @@ body.dark-mode .rcx-subtitle,
 body.dark-mode .rcx-box--text-color-default, 
 body.dark-mode .rcx-box--text-color-info {
     color: var(--color-dark);
+}
+
+
+/* Custom tweaks by Pablo Vazquez so it looks nicer. */
+/* Override variables */
+body.dark-mode {
+  --border-radius: .33rem;
+
+  --primary-font-color: var(--color-gray-medium);
+  --mention-link-background: var(--color-dark-80);
+
+  --popover-item-color: var(--primary-font-color);
+
+  --message-box-container-border-color: var(--color-dark-70);
+  --message-box-container-border-radius: var(--border-radius);
+}
+
+/* Make message actions less prominent */
+body.dark-mode .message-actions * {opacity: .7;}
+body.dark-mode .message-actions:hover * {opacity: 1;}
+
+/* Popover element */
+.rc-popover__item:hover {color: var(--color-gray-lightest);}
+
+/* Code element */
+.rc-old code { border: none }
+
+/* Top announcement on channels. */
+.rc-old .fixed-title { border: none}
+
+/* Unread Messages label */
+body.dark-mode .message.first-unread .body:after {left: 1rem; right: initial;}
+
+/* Add padding and margin so the label can breathe. */
+body.dark-mode .message.first-unread {
+  margin-top: 1rem;
+  padding-top: 1rem !important;
+}
+
+/* System messages in the chat, like "xxx changed room avatar." */
+body.dark-mode .message.system {color: var(--color-dark-light);}
+
+/* The little vertical bar on the left of attachments/quotes/etc. */
+.background-info-font-color {background-color: var(--color-dark-medium);}
+
+/* Color of the text in attachments/quotes/etc. */
+body.dark-mode .attachment .attachment-text,
+body.dark-mode .attachment .attachment-author,
+body.dark-mode .attachment .attachment-author a {color: var(--color-dark-light);}
+
+/* Sidebar channel list. */
+
+/* Make the video icon less prominent, */
+.sidebar-item__video {
+  color: var(--color-dark-light);
+  animation: none;
 }
